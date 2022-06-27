@@ -155,7 +155,7 @@
             console.log(matrix2);
         }
         
-        let result = matrix_sum(matrix1, matrix2)
+     //   let result = matrix_sum(matrix1, matrix2)
 
             for (let i = 0; i < matrix1.length; i++) {
                 for (let j = 0; j < matrix1[i].length; j++) {
@@ -166,11 +166,11 @@
 
         let opration_dropdown = document.querySelector("#opration_dropdown").value;
 if (opration_dropdown=="sum"){
-  return  function matrix_sum;
+      let result = matrix_sum(matrix1, matrix2);
 }else if (opration_dropdown=="minus"){
-  return  function matrix_minus;
+  let result = matrix_minus(matrix1, matrix2);
 }else if (opration_dropdown=="multiply"){
-  return  function matrix_multiply;
+   let result = matrix_multiply(matrix1, matrix2);
 }else {
     console.log("error")
 }

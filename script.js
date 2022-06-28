@@ -2,7 +2,7 @@ let row = "";
 let column = "";
 let target_result_div = document.querySelector("#result_div");
 let matrix1 = [], matrix2 = [];
-let result = [];
+let result = [[4,5,4][1,5,4][1,5,4]];
 let opration_dropdown = document.querySelector("#opration_dropdown").value;
 
 console.log(opration_dropdown);
@@ -46,7 +46,7 @@ function values_lane_ka_function() {
 
     for (let i = 0; i < row; i++) {
         matrix1[i] = [];
-        matrix2[i] = []
+        matrix2[i] = [];
         for (let j = 0; j < column; j++) {
             // if (matrix1[i][j] === undefined) {matrix1[i]= []};
             // if (matrix2[i][j] === undefined) {matrix2[i]= []};
@@ -56,45 +56,45 @@ function values_lane_ka_function() {
     }
 
 
-    if (opration_dropdown == "sum") {
-        let result = matrix_sum(matrix1, matrix2);
-        // console.log("sum");
-    } else if (opration_dropdown == "minus") {
-        let result = matrix_minus(matrix1, matrix2);
-        // console.log("minus");
+    // if (opration_dropdown == "sum") {
+    //     let result = matrix_sum(matrix1, matrix2);
+    //     // console.log("sum");
+    // } else if (opration_dropdown == "minus") {
+    //     let result = matrix_minus(matrix1, matrix2);
+    //     // console.log("minus");
 
-    } else if (opration_dropdown == "multiply") {
-        let result = matrix_multiply(matrix1, matrix2);
-        // console.log("multiply");
+    // } else if (opration_dropdown == "multiply") {
+    //     let result = matrix_multiply(matrix1, matrix2);
+    //     // console.log("multiply");
 
-    } else {
-        console.log("error")
-    }
-}
-
-for (let i = 0; i < matrix1.length; i++) {
-    for (let j = 0; j < matrix1[i].length; j++) {
-        document.querySelector(`#Result_values_${i}${j}`).value = result[i][j];
-    }
-}
-
-function matrix_sum(matrix1, matrix2) {
+    // } else {
+    //     console.log("error")
+    // }
+    
     for (let i = 0; i < matrix1.length; i++) {
         for (let j = 0; j < matrix1[i].length; j++) {
-            result[i][j] = matrix1[i][j] + matrix2[i][j];
+            document.querySelector(`#Result_values_${i}${j}`).value = result[i][j];
         }
     }
-    return [];
 }
+    
+// function matrix_sum(matrix1, matrix2) {
+//     for (let i = 0; i < matrix1.length; i++) {
+//         for (let j = 0; j < matrix1[i].length; j++) {
+//             result[i][j] = matrix1[i][j] + matrix2[i][j];
+//         }
+//     }
+//     return [];
+// }
 
-function matrix_minus(matrix1, matrix2) {
-    for (let i = 0; i < matrix1.length; i++) {
-        for (let i = 0; i < matrix1[i].length; j++) {
-            result[i][j] = matrix1[i][j] - matrix2[i][j];
-        }
-    }
-    return
-}
+// function matrix_minus(matrix1, matrix2) {
+//     for (let i = 0; i < matrix1.length; i++) {
+//         for (let i = 0; i < matrix1[i].length; j++) {
+//             result[i][j] = matrix1[i][j] - matrix2[i][j];
+//         }
+//     }
+//     return
+// }
 // function matrix_multiply(matrix1, matrix2) {
 //     var aNumRows = a.length, aNumCols = a[0].length,
 //             bNumRows = b.length, bNumCols = b[0].length,

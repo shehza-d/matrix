@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<form onsubmit="myfunction(); return false">
+		<label for="traffic_signs">Chose your Value: </label>
+		<select name="" id="traffic_signs">
+			<option value="red">Red</option>
+			<option value="yellow">Yellow</option>
+			<option value="green">Green</option>
+		</select>
+		<button type="submit">Check</button>
+	</form>
+	<div id="traffic_div"></div>
+<script>
+		function myfunction() {
+			let traffic_signs_value = document.querySelector("#traffic_signs").value;
+			if (traffic_signs_value == "red") {
+				document.querySelector("#traffic_div").textContent = "Must Stop!";
+			} else if (traffic_signs_value == "yellow") {
+				document.querySelector("#traffic_div").textContent = "Ready to Move";
+			} else if (traffic_signs_value == "green") {
+				document.querySelector("#traffic_div").textContent = "Move now";
+			} else {
+				alert("Error!")
+			}
+		}
+</script>
+</body>
+</html>

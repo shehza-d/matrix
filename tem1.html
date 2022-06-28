@@ -28,7 +28,7 @@
 		let column = "";
 		let target_result_div = document.querySelector("#result_div");
 		let matrix1 = [], matrix2 = [];
-		let result = [[4, 5, 4][1, 5, 4][1, 5, 4]];
+		let result = [[4, 5, 4],[1, 5, 4],[1, 5, 4]];
 
 		function start() {
 			row = Number(document.querySelector("#matrix_row_size").value);
@@ -54,16 +54,16 @@
 			}
 		}//start funciton end
 		function values_lane_ka_function() {
-			for (let i = 0; i < row; i++) {
-				matrix1[i] = [];
-				matrix2[i] = [];
-				for (let j = 0; j < column; j++) {
-					// if (matrix1[i][j] === undefined) {matrix1[i]= []};
-					// if (matrix2[i][j] === undefined) {matrix2[i]= []};
-					matrix1[i][j] = Number(document.querySelector(`#matrix_value_${i}${j}`).value);
-					matrix2[i][j] = Number(document.querySelector(`#matrix_value2_${i}${j}`).value);
-				}
-			}
+			// for (let i = 0; i < row; i++) {
+			// 	matrix1[i] = [];
+			// 	matrix2[i] = [];
+			// 	for (let j = 0; j < column; j++) {
+			// 		// if (matrix1[i][j] === undefined) {matrix1[i]= []};
+			// 		// if (matrix2[i][j] === undefined) {matrix2[i]= []};
+			// 		matrix1[i][j] = Number(document.querySelector(`#matrix_value_${i}${j}`).value);
+			// 		matrix2[i][j] = Number(document.querySelector(`#matrix_value2_${i}${j}`).value);
+			// 	}
+			// }
 			for (let i = 0; i < matrix1.length; i++) {
 				for (let j = 0; j < matrix1[i].length; j++) {
 					document.querySelector(`#Result_values_${i}${j}`).value = result[i][j];

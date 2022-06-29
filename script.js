@@ -1,8 +1,8 @@
 let row = "";
 let column = "";
 let target_result_div = document.querySelector("#result_div");
-let matrix1 = [], matrix2 = [];
-let result = [[4,5,4][1,5,4][1,5,4]];
+// let matrix1 = [], matrix2 = [];
+let result = [];
 let opration_dropdown = document.querySelector("#opration_dropdown").value;
 
 console.log(opration_dropdown);
@@ -41,23 +41,24 @@ function start() {
         target_result_div.innerHTML += "<br>";
     }
 }
-
-function values_lane_ka_function() {
-
+// input se mili hue values ko 2d array ma store karne ka function
+function value_function() {
+    let matrix1 = [], matrix2 = [];
     for (let i = 0; i < row; i++) {
         matrix1[i] = [];
         matrix2[i] = [];
+        result[i] = [];
         for (let j = 0; j < column; j++) {
-            // if (matrix1[i][j] === undefined) {matrix1[i]= []};
-            // if (matrix2[i][j] === undefined) {matrix2[i]= []};
+            if (matrix1[i] === undefined) { matrix1[i] = [] };
+            if (matrix2[i] === undefined) { matrix2[i] = [] };
             matrix1[i][j] = Number(document.querySelector(`#matrix_value_${i}${j}`).value);
             matrix2[i][j] = Number(document.querySelector(`#matrix_value2_${i}${j}`).value);
+            result[i][j]= 0;
         }
     }
 
-
     // if (opration_dropdown == "sum") {
-    //     let result = matrix_sum(matrix1, matrix2);
+        let result = matrix_sum(matrix1, matrix2);
     //     // console.log("sum");
     // } else if (opration_dropdown == "minus") {
     //     let result = matrix_minus(matrix1, matrix2);
@@ -70,22 +71,23 @@ function values_lane_ka_function() {
     // } else {
     //     console.log("error")
     // }
-    
-    for (let i = 0; i < matrix1.length; i++) {
-        for (let j = 0; j < matrix1[i].length; j++) {
+
+    // sir ne i < matrix1.length aur j < matrix1[i].length kiya tha
+    for (let i = 0; i < row; i++) {
+        for (let j = 0; j < column; j++) {
             document.querySelector(`#Result_values_${i}${j}`).value = result[i][j];
         }
     }
 }
-    
-// function matrix_sum(matrix1, matrix2) {
-//     for (let i = 0; i < matrix1.length; i++) {
-//         for (let j = 0; j < matrix1[i].length; j++) {
-//             result[i][j] = matrix1[i][j] + matrix2[i][j];
-//         }
-//     }
-//     return [];
-// }
+
+function matrix_sum(matrix1, matrix2) {
+    for (let i = 0; i < row; i++) {
+        for (let j = 0; j < column; j++) {
+            result[i][j] = matrix1[i][j] + matrix2[i][j];
+        }
+    }
+    return result;
+}
 
 // function matrix_minus(matrix1, matrix2) {
 //     for (let i = 0; i < matrix1.length; i++) {

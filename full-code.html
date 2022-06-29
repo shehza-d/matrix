@@ -95,9 +95,8 @@
                     result[i][j]= 0;
                 }
             }
-
             // if (opration_dropdown == "sum") {
-                let result = matrix_sum(matrix1, matrix2);
+ let result = matrix_sum(matrix1, matrix2);
             //     // console.log("sum");
             // } else if (opration_dropdown == "minus") {
             //     let result = matrix_minus(matrix1, matrix2);
@@ -112,11 +111,11 @@
             // }
 
             // sir ne i < matrix1.length aur j < matrix1[i].length kiya tha
-            for (let i = 0; i < row; i++) {
-                for (let j = 0; j < column; j++) {
-                    document.querySelector(`#Result_values_${i}${j}`).value = result[i][j];
-                }
-            }
+            // for (let i = 0; i < row; i++) {
+            //     for (let j = 0; j < column; j++) {
+            //         document.querySelector(`#Result_values_${i}${j}`).value = result[i][j];
+            //     }
+            // }
         }
 
         function matrix_sum(matrix1, matrix2) {
@@ -128,7 +127,7 @@
             return result;
         }
 
-// function matrix_minus(matrix1, matrix2) {
+//  function matrix_minus(matrix1, matrix2) {
 //     for (let i = 0; i < matrix1.length; i++) {
 //         for (let i = 0; i < matrix1[i].length; j++) {
 //             result[i][j] = matrix1[i][j] - matrix2[i][j];
